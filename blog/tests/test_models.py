@@ -15,7 +15,7 @@ class AuthorTestCase(TestCase):
         self.assertEqual(author.last_name, "Stark")
 
 
-class PostTestCase(TestCase):
+class PostCommentTestCase(TestCase):
     @classmethod
     def setUpTestData(cls) -> None:
         author = Author.objects.create(first_name="Tony", last_name="Stark", email="")
@@ -32,12 +32,22 @@ class PostTestCase(TestCase):
                 )
                 post.save()
                 post.tags.add(*tag)
+                comment = Comment(
+                    user_name="santhosh",
+                    user_email="santhosh@test.com",
+                    text="this is awesome post",
+                    post=post,
+                )
+                comment.save()
         return super().setUpTestData()
 
     # def setUp(self) -> None:
 
     def test_post(self):
         self.assertEqual(len(Post.objects.all()), 3)
+
+    def test_comment(self):
+        self.assertEqual(len(Comment.objects.all()), 3)
 
     def tearDown(self) -> None:
         Post.objects.all().delete()
