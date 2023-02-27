@@ -1,10 +1,12 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseNotFound, Http404, HttpResponseRedirect
 from datetime import date
-from .models import Post
-from django.views.generic import ListView, View, DeleteView
-from .forms import CommentForm
+
+from django.http import Http404, HttpResponseNotFound, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
+from django.views.generic import DeleteView, ListView, View
+
+from .forms import CommentForm
+from .models import Post
 
 # Create your views here.
 

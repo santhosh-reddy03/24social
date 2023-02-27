@@ -1,8 +1,10 @@
-from django.dispatch import receiver
-from django.db.models.signals import pre_save, post_delete
 import os
-from blog.models import Post
+
 from django.db import transaction
+from django.db.models.signals import post_delete, pre_save
+from django.dispatch import receiver
+
+from blog.models import Post
 
 
 @receiver(post_delete, sender=Post)

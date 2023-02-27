@@ -1,7 +1,9 @@
-from django.test import TestCase
-from blog.models import Post, Author, Comment, Tags
 from datetime import date
+
 from django.core.files import File
+from django.test import TestCase
+
+from blog.models import Author, Comment, Post, Tags
 
 # Create your tests here.
 

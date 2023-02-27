@@ -1,0 +1,11 @@
+[tool.black]
+line-length = 120
+
+
+[tool.isort]
+profile = "black"
+
+[tool.ruff]
+# Enable Pyflakes and pycodestyle rules., ruff is similar to flake8 with addiitonal functionality
+select = ["E", "F"]
+line-length=120

@@ -1,8 +1,10 @@
-from blog import views
-from django.test import TestCase
-from blog.models import Author, Post, Comment, Tags
 from datetime import date
+
 from django.core.files import File
+from django.test import TestCase
+
+from blog import views
+from blog.models import Author, Comment, Post, Tags
 
 
 class TestIndexView(TestCase):
