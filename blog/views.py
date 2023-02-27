@@ -17,7 +17,6 @@ from .models import Post
 
 
 class Index(ListView):
-
     template_name = "blog/index.html"
     model = Post
     ordering = ["-date"]

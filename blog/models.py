@@ -23,9 +23,7 @@ class Tags(models.Model):
 
 class Post(models.Model):
     image = models.ImageField(upload_to="images")
-    author = models.ForeignKey(
-        Author, on_delete=models.SET_NULL, null=True, related_name="posts"
-    )
+    author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, related_name="posts")
     date = models.DateField()
     title = models.CharField(max_length=200)
     excerpt = models.TextField()

@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("blog", "0004_alter_post_author_alter_post_image_alter_post_slug_and_more"),
     ]

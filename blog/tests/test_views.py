@@ -9,9 +9,7 @@ from blog.models import Author, Comment, Post, Tags
 
 class TestIndexView(TestCase):
     def setUp(self) -> None:
-        author = Author.objects.create(
-            first_name="Tony", last_name="Stark", email="tony@starktech.com"
-        )
+        author = Author.objects.create(first_name="Tony", last_name="Stark", email="tony@starktech.com")
         tag = [Tags.objects.create(caption=i) for i in ["new", "recent"]]
         for i, v in enumerate(["coding.png", "mountains.jpg", "woods.jpg"]):
             with open(f"blog/static/blog/images/{v}", "rb") as fp:

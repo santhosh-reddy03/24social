@@ -24,9 +24,10 @@ jobs:
 
     - name: Install test dependencies
       run: |
+        pip install django 
         pip install pytest
 
-    - name: Test with unittest
+    - name: Test with pytest
       run: |
         python manage.py test
 

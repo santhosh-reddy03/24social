@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("blog", "0003_alter_post_image"),
     ]
@@ -52,9 +51,7 @@ class Migration(migrations.Migration):
                 ("date", models.DateField()),
                 (
                     "post",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="blog.post"
-                    ),
+                    models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to="blog.post"),
                 ),
             ],
         ),
