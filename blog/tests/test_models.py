@@ -23,7 +23,7 @@ class PostCommentTestCase(TestCase):
         author = Author.objects.create(first_name="Tony", last_name="Stark", email="")
         tag = [Tags.objects.create(caption=i) for i in ["new", "recent"]]
         for i, v in enumerate(["coding.png", "mountains.jpg", "woods.jpg"]):
-            with open(f"blog/static/blog/images/{v}", "rb") as fp:
+            with open(f"blog/tests/images_test/{v}", "rb") as fp:
                 post = Post(
                     image=File(fp, name=f"{v}"),
                     author=author,
