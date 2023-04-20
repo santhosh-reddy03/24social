@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "blog",
     "storages",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,4 @@ MEDIAFILES_FOLDER = "media"
 
 # STATICFILES_STORAGE = "custom_storages.StaticFileStorage"
 # DEFAULT_FILE_STORAGE = "custom_storages.MediaFileStorage"
+AUTH_USER_MODEL = "users.User"

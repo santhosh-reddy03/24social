@@ -22,7 +22,7 @@ class Tags(models.Model):
 
 
 class Post(models.Model):
-    image = models.ImageField(upload_to="images")
+    image = models.ImageField(upload_to="images", blank=True)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, related_name="posts")
     date = models.DateField()
     title = models.CharField(max_length=200)
@@ -30,6 +30,7 @@ class Post(models.Model):
     content = models.TextField()
     tags = models.ManyToManyField(Tags)
     slug = models.SlugField(unique=True, db_index=True)
+    total_likes = models.BigIntegerField()
 
     def __str__(self) -> str:
         return f"{self.title}"
